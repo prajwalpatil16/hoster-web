@@ -2,6 +2,8 @@
 
 Hoster Web is the official website for **Hoster**, a modern software engineering company focused on building scalable, reliable, and maintainable digital products.
 
+---
+
 ## 🌍 Live Website
 
 👉 https://prajwal-hoster.netlify.app/
@@ -10,32 +12,40 @@ Hoster Web is the official website for **Hoster**, a modern software engineering
 
 ## 📌 Project Overview
 
-This repository contains the source code for the Hoster website.
+This repository contains the complete full-stack implementation of the Hoster website, including a public-facing frontend and a secure admin-enabled backend.
 
-### Frontend
-- Modern, responsive UI
-- Component-driven architecture
-- Built with React, Vite, and Tailwind CSS
-- Deployed on Netlify
+---
 
-### Backend
-- Folder reserved for backend services
-- Will include APIs and server-side logic
-- Development in progress
+## 🎨 Frontend
+- Responsive company website
+- Component-driven UI architecture
+- Admin dashboard for managing inquiries
+- Built with **React (Vite)** and **Tailwind CSS**
+- Deployed on **Netlify**
+
+---
+
+## ⚙️ Backend
+- REST APIs for contact and career inquiries
+- Admin authentication using JWT
+- Inquiry management (view, mark as read, delete)
+- MySQL database integration
+- Built with **Flask**
+- Designed for local development and future deployment
 
 ---
 
 ## 🚀 Deployment
-
-- Frontend is deployed using **Netlify**
+- Frontend deployed using **Netlify**
 - Continuous deployment via **GitHub**
-- Production builds handled with **Vite**
+- Backend currently configured for local execution
 
 ---
 
-## 🛠️ Development Status
+## 🛠️ Project Status
 
-This project is actively maintained and updated regularly as features and backend services are added.
+**Version 1 complete.**  
+This project is feature-complete and intended as a production-ready portfolio project.
 
 ---
 
@@ -44,4 +54,3 @@ This project is actively maintained and updated regularly as features and backen
 For questions or collaboration:
 
 📧 **prajwalgpatil20022@gmail.com**
-
