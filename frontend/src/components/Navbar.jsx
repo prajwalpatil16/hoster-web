@@ -30,7 +30,9 @@ export default function Navbar() {
             <Link to="/services" className={linkClass("/services")}>Services</Link>
             <Link to="/projects" className={linkClass("/projects")}>Projects</Link>
             <Link to="/about" className={linkClass("/about")}>About</Link>
+            <Link to="/careers" className={linkClass("/careers")}>Careers</Link>
             <Link to="/contact" className={linkClass("/contact")}>Contact</Link>
+            
           </div>
 
           {/* Desktop CTA */}
@@ -63,6 +65,7 @@ export default function Navbar() {
             <Link onClick={() => setOpen(false)} to="/projects" className={linkClass("/projects")}>Projects</Link>
             <Link onClick={() => setOpen(false)} to="/about" className={linkClass("/about")}>About</Link>
             <Link onClick={() => setOpen(false)} to="/contact" className={linkClass("/contact")}>Contact</Link>
+            <Link onClick={() => setOpen(false)} to="/careers" className={linkClass("/careers")}>Careers</Link>
 
             <Link
               to="/contact"

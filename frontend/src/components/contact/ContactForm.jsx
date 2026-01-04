@@ -1,4 +1,40 @@
 export default function ContactForm() {
+
+  const handleSubmit = async (e) => {
+  e.preventDefault();
+
+  const form = e.target;
+
+  const payload = {
+    name: form.name.value,
+    email: form.email.value,
+    company: form.company.value,
+    message: form.message.value,
+  };
+
+  try {
+    const res = await fetch("http://127.0.0.1:5000/api/contact", {
+
+      method: "POST",
+      headers: {
+        "Content-Type": "application/json",
+      },
+      body: JSON.stringify(payload),
+    });
+
+    if (!res.ok) {
+      throw new Error("Failed");
+    }
+
+    alert("Message sent successfully");
+    form.reset();
+  } catch (err) {
+    alert("Something went wrong. Please try again.");
+  }
+};
+
+
+
   return (
     <section className="bg-gray-50">
       <div className="max-w-6xl mx-auto px-6 py-20 grid lg:grid-cols-2 gap-16 items-center">
@@ -14,24 +50,20 @@ export default function ContactForm() {
             with clarity and honesty.
           </p>
 
-          <form
-            onSubmit={(e) => {
-              e.preventDefault();
-              alert("Form submit placeholder");
-            }}
-            className="mt-8 space-y-5"
-          >
+          <form onSubmit={handleSubmit} className="mt-8 space-y-5">
+
             {/* NAME + EMAIL */}
             <div className="grid sm:grid-cols-2 gap-4">
-              <input className="input" placeholder="Full name" required />
-              <input type="email" className="input" placeholder="Email address" required />
+              <input name="name" className="input" placeholder="Full name" required />
+              <input name="email" type="email" className="input" placeholder="Email address" required />
             </div>
 
             {/* COMPANY */}
-            <input className="input" placeholder="Company (optional)" />
+            <input name="company" className="input" placeholder="Company (optional)" />
 
             {/* MESSAGE */}
             <textarea
+              name="message"
               rows="4"
               className="input resize-none"
               placeholder="Briefly describe your project"
