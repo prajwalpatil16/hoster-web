@@ -1,37 +1,42 @@
+import { useSearchParams } from "react-router-dom";
+
 export default function ContactForm() {
+  const [searchParams] = useSearchParams();
+  const source = searchParams.get("source") || "contact";
 
   const handleSubmit = async (e) => {
-  e.preventDefault();
+    e.preventDefault();
 
-  const form = e.target;
+    const form = e.target;
 
-  const payload = {
-    name: form.name.value,
-    email: form.email.value,
-    company: form.company.value,
-    message: form.message.value,
-  };
+    const payload = {
+      name: form.name.value,
+      email: form.email.value,
+      company: form.company.value,
+      message: form.message.value,
+      source: source,
+    };
 
-  try {
-    const res = await fetch("http://127.0.0.1:5000/api/contact", {
+    try {
+      const res = await fetch("http://localhost:5001/api/contact", {
 
-      method: "POST",
-      headers: {
-        "Content-Type": "application/json",
-      },
-      body: JSON.stringify(payload),
-    });
+        method: "POST",
+        headers: {
+          "Content-Type": "application/json",
+        },
+        body: JSON.stringify(payload),
+      });
 
-    if (!res.ok) {
-      throw new Error("Failed");
+      if (!res.ok) {
+        throw new Error("Failed");
+      }
+
+      alert("Message sent successfully");
+      form.reset();
+    } catch (err) {
+      alert("Something went wrong. Please try again.");
     }
-
-    alert("Message sent successfully");
-    form.reset();
-  } catch (err) {
-    alert("Something went wrong. Please try again.");
-  }
-};
+  };
 
 
 

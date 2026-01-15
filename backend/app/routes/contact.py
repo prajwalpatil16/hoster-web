@@ -1,6 +1,7 @@
 from flask import Blueprint, request, jsonify
 from flask_jwt_extended import jwt_required
 from app.db import get_db_connection
+from app.routes.admin import admin_required
 
 contact_bp = Blueprint("contact", __name__, url_prefix="/api/contact")
 
@@ -38,6 +39,7 @@ def submit_contact():
 
 @contact_bp.route("/admin", methods=["GET"])
 @jwt_required()
+@admin_required
 def get_contacts():
     conn = get_db_connection()
     cursor = conn.cursor(dictionary=True)
@@ -55,6 +57,7 @@ def get_contacts():
 
 @contact_bp.route("/admin/<int:id>", methods=["DELETE"])
 @jwt_required()
+@admin_required
 def delete_contact(id):
     conn = get_db_connection()
     cursor = conn.cursor()
@@ -73,6 +76,7 @@ def delete_contact(id):
 
 @contact_bp.route("/admin/<int:id>/read", methods=["PUT"])
 @jwt_required()
+@admin_required
 def mark_read(id):
     conn = get_db_connection()
     cursor = conn.cursor()

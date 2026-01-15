@@ -46,7 +46,7 @@ export default function CareersCTA() {
 
               <div className="mt-8">
                 <Link
-                  to="/contact"
+                  to="/contact?source=careers"
                   className="inline-flex items-center gap-2 text-sm font-semibold text-teal-600"
                 >
                   Start a conversation

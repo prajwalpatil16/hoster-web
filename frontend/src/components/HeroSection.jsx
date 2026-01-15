@@ -19,7 +19,7 @@ export default function HeroSection() {
             Modern Problems · Modern Platform
           </span>
 
-          <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
+          <h1 className="text-3xl sm:text-5xl lg:text-6xl font-extrabold text-gray-900 leading-tight">
             Build smarter digital
             <br />
             products with confidence
@@ -31,7 +31,7 @@ export default function HeroSection() {
 
           <div className="mt-8 flex flex-wrap gap-4">
             <a
-              href="/contact"
+              href="/signup"
               className="rounded-full bg-teal-500 px-7 py-3 text-sm font-semibold text-white hover:bg-teal-600 transition"
             >
               Get started
