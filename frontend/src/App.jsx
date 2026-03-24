@@ -77,6 +77,9 @@ export default function App() {
 
         {/* FALLBACK FOR ADMIN LOGIN (Old Path) */}
         <Route path="/admin/login" element={<Navigate to="/login" />} />
+
+        {/* CATCH-ALL ROUTE FOR UNMATCHED PATHS */}
+        <Route path="*" element={<Navigate to="/" replace />} />
       </Routes>
     </BrowserRouter>
   );
