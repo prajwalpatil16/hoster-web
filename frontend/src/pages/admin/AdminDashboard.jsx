@@ -31,7 +31,7 @@ export default function AdminDashboard() {
     fetchData();
   }, [activeTab]);
 
-  const fetchData = async () => {
+  async function fetchData() {
     const headers = { Authorization: `Bearer ${token}` };
 
     if (activeTab === "inquiries" || activeTab === "careers") {

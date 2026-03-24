@@ -1,4 +1,4 @@
-import contactBanner from "../assets/images/contactbanner.png";
+import contactBanner from "../assets/images/contactBanner.png";
 import PageBanner from "../components/PageBanner";
 import ContactHighlights from "../components/contact/ContactHighlights";
 import ContactForm from "../components/contact/ContactForm";
